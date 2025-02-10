@@ -39,49 +39,7 @@ const App = () => {
       return;
     }
 
-    if (value === "=" || value === "Enter") {
-      setLastOperator("");
-      //get the last char
-      const lastChar = strToDisplay[strToDisplay.length - 1];
-
-      // check if it is one of the operators
-      if (operators.includes(lastChar)) {
-        setStrToDisplay(strToDisplay.slice(0, -1));
-      }
-
-      return displayTotal();
-    }
-
-    // show only last clicked operator
-    if (operators.includes(value)) {
-      setLastOperator(value);
-      //get the last char
-      const lastChar = strToDisplay[strToDisplay.length - 1];
-
-      if (operators.includes(lastChar)) {
-        setStrToDisplay(strToDisplay.slice(0, -1) + value);
-        return;
-      }
-    }
-
-    //handle the dot click
-
-    if (value === ".") {
-      const lastOperatorIndex = strToDisplay.lastIndexOf(lastOperator);
-
-      const lastNumebrSet = strToDisplay.slice(lastOperatorIndex);
-
-      if (lastNumebrSet.includes(".")) {
-        return;
-      }
-
-      if (!lastOperator && strToDisplay.includes(".")) {
-        return;
-      }
-    }
-
-    setStrToDisplay((ps) => ps + value);
-  };
+    
 
   // calculate total
   const displayTotal = () => {
