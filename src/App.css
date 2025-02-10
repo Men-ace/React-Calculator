@@ -1,0 +1,185 @@
+:root {
+  --primaryClr: green;
+  --secondaryClr: lightGreen;
+  --trClr: yellow;
+}
+
+body {
+  margin: 0;
+  font-size: 1.2rem;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.arbutus-regular {
+  font-family: "Arbutus", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.wrapper {
+  background: linear-gradient(var(--trClr), var(--primaryClr));
+  min-height: 100vh;
+}
+
+.calculator {
+  background: rgb(186, 186, 186);
+  width: 400px;
+  padding: 2rem 1.5rem;
+  border-radius: 10px;
+
+  display: grid;
+  gap: 1rem;
+  grid-template-areas:
+    "display display display display"
+    "ac c per divide"
+    "btn7 btn8 btn9 x"
+    "btn4 btn5 btn6 minus"
+    "btn1 btn2 btn3 plus"
+    "btn0 dot equal equal";
+
+  transform: perspective(70rem) rotateX(30deg);
+  animation: moving 2s;
+}
+
+.display {
+  background: var(--secondaryClr);
+  padding: 1rem;
+  font-size: 1.5rem;
+  text-align: end;
+  font-weight: bolder;
+  box-shadow: 0 10px 5px rgba(128, 128, 128, 0.527);
+  grid-area: display;
+}
+
+.calculator .btn {
+  background: var(--trClr);
+  height: 50px;
+  border-radius: 5px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  box-shadow: 0 10px 5px rgba(128, 128, 128, 0.527);
+}
+
+.calculator .btn:hover {
+  cursor: pointer;
+  background: var(--secondaryClr);
+  transition: all 0.3s;
+}
+
+.btn-ac {
+  grid-area: ac;
+}
+
+.btn-c {
+  grid-area: c;
+}
+
+.btn-per {
+  grid-area: per;
+}
+
+.btn-divide {
+  grid-area: divide;
+}
+
+.btn-7 {
+  grid-area: btn7;
+}
+
+.btn-8 {
+  grid-area: btn8;
+}
+
+.btn-9 {
+  grid-area: btn9;
+}
+
+.btn-x {
+  grid-area: x;
+}
+
+.btn-4 {
+  grid-area: btn4;
+}
+
+.btn-5 {
+  grid-area: btn5;
+}
+
+.btn-6 {
+  grid-area: btn6;
+}
+
+.btn-minus {
+  grid-area: minus;
+}
+
+.btn-1 {
+  grid-area: btn1;
+}
+
+.btn-2 {
+  grid-area: btn2;
+}
+
+.btn-3 {
+  grid-area: btn3;
+}
+
+.btn-plus {
+  grid-area: plus;
+}
+
+.btn-0 {
+  grid-area: btn0;
+}
+
+.btn-dot {
+  grid-area: dot;
+}
+
+.btn-equal {
+  grid-area: equal;
+}
+
+.prank {
+  background: red;
+  color: rgb(255, 255, 255);
+  animation: shake 0.5s;
+}
+
+@keyframes shake {
+  0% {
+    transform: translateX(10px);
+  }
+  50% {
+    transform: translateX(-10px);
+  }
+  80% {
+    transform: translateX(10px);
+  }
+  100% {
+    transform: translateX(-10px);
+  }
+}
+
+@keyframes moving {
+  0% {
+    transform: perspective(10rem) rotateX(30deg);
+  }
+  100% {
+    transform: perspective(70rem) rotateX(30deg);
+  }
+}
